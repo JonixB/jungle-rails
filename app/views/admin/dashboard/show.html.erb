@@ -1,2 +1,12 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1 style="color: green">Dashboard</h1>
+</br>
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between">
+    <strong>Product Count</strong></a>
+    <span class="badge alert-primary" role="alert"><a href='/admin/products'><%= @product_count %> products</span></a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <strong>Category Count</strong></a>
+    <span class="badge alert-primary" role="alert"><a href='/admin/products'><%= @category_count %> categories</span></a>
+  </li>
+</ul>
