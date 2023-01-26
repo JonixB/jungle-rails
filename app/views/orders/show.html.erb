@@ -8,6 +8,11 @@
     <h4>Thank you for your order!</h4>
   </div>
 
+  <%= render 'order' %> 
+
+  <div class="alert alert-success" role="alert">
+    A detailed receipt of your order has been emailed to <strong><%= @order.email %></strong>
+  </div>
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
