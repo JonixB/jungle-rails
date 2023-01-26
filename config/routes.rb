@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get 'about/index'
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:create, :show]
+
+  resource :about, only: [:index]
 
   namespace :admin do
     root to: 'dashboard#show'
