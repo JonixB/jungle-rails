@@ -66,6 +66,33 @@ RSpec.describe User, type: :model do
       same_email.save
       expect(same_email.errors[:email].first).to eql("has already been taken")
     end
+  end
 
+  describe '.authenticate_with_credentials' do
+    before(:each) do
+      @user = User.new do |user|
+        user.first_name = 'Nikko'
+        user.last_name = 'Bansil'
+        user.email = 'nikko@test.com'
+        user.password = '12345678'
+        user.password_confirmation = '12345678'
+      end
+      @user.save
+    end
+    it 'should have user instance if credentials are valid' do
+      user = User.authenticate_with_credentials('nikko@test.com', '12345678')
+      expect(user).to_not be(nil)
+    end
+  
+    it 'should disregard whitespaces on the email field' do
+      user = User.authenticate_with_credentials('   nikko@test.com         ', '12345678')
+      expect(user).to_not be(nil)
+    end
+  
+    it 'should disregard character cases on the email field' do
+      user = User.authenticate_with_credentials('NiKKo@tEsT.CoM', '12345678')
+      expect(user).to_not be(nil)
+    end
+    
   end
 end
