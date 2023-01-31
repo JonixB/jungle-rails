@@ -16,6 +16,21 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
 
+    it 'is invalid without first_name' do
+      @user.first_name = nil
+      expect(@user).to_not be_valid
+    end
+
+    it 'is invalid without last_name' do
+      @user.last_name = nil
+      expect(@user).to_not be_valid
+    end
+
+    it 'is invalid without email' do
+      @user.email = nil
+      expect(@user).to_not be_valid
+    end
+
     it 'is invalid without password' do
       @user.password = nil
       expect(@user).to_not be_valid
@@ -29,6 +44,12 @@ RSpec.describe User, type: :model do
     it "is invalid when passwords don't match" do
       @user.password = '12345678'
       @user.password_confirmation = '123456789'
+      expect(@user).to_not be_valid
+    end
+
+    it "is invalid when password is less than 8 characters" do
+      @user.password = '1234'
+      @user.password_confirmation = '1234'
       expect(@user).to_not be_valid
     end
 
