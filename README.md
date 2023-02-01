@@ -1,17 +1,32 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 6.1 that utilizes stripe integration, Bootstrap and PostgreSQL. 
 
-## Setup
+## Key Features
+  - Stripe integration
+  - Admin dashboard to manage products and categories
+  - User authentication, session creation and removal
+  
+## Screenshots
 
-1. Run `bundle install` to install dependencies
-2. Create `config/database.yml` by copying `config/database.example.yml`
-3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-4. Run `bin/rails db:reset` to create, load and seed db
-5. Create .env file based on .env.example
-6. Sign up for a Stripe account
-7. Put Stripe (test) keys into appropriate .env vars
-8. Run `bin/rails s -b 0.0.0.0` to start the server
+Banner
+!["Banner"](https://github.com/JonixB/jungle-rails/blob/master/docs/banner.png?raw=true)
+
+Product List
+!["Product List"](https://github.com/JonixB/jungle-rails/blob/master/docs/productlist.png?raw=true)
+## Database
+
+Cart
+!["Cart"](https://github.com/JonixB/jungle-rails/blob/master/docs/Cart.png?raw=true)
+
+Stripe Payment
+!["Stripe Payment"](https://github.com/JonixB/jungle-rails/blob/master/docs/payment.png?raw=true)
+
+Admin dash for adding products
+!["Admin dash for adding products"](https://github.com/JonixB/jungle-rails/blob/master/docs/product-dashboard.png?raw=true)
+
+Admin dash for adding categories
+!["Admin dash for adding categories"](https://github.com/JonixB/jungle-rails/blob/master/docs/categories.png?raw=true)
 
 ## Database
 
