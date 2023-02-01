@@ -28,9 +28,6 @@ Admin dash for adding products
 Admin dash for adding categories
 !["Admin dash for adding categories"](https://github.com/JonixB/jungle-rails/blob/master/docs/categories.png?raw=true)
 
-## Database
-
-If Rails is complaining about authentication to the database, uncomment the user and password fields from `config/database.yml` in the development and test sections, and replace if necessary the user and password `development` to an existing database user.
 
 ## Stripe Testing
 
